@@ -8,8 +8,6 @@ public class InputValidatorTest extends InputValidator {
 
     private static final InputValidator inputValidator = new InputValidator();
 
-
-
     @Test
     public void testCheckValidInputShouldReturnTrue() {
         Assert.assertTrue(inputValidator.isInputValid(5, createAllowedInputIntegerList()));
@@ -24,12 +22,11 @@ public class InputValidatorTest extends InputValidator {
         Assert.assertFalse(inputValidator.isInputValid(0, createAllowedInputIntegerList()));
     }
 
-    private List<Integer> createAllowedInputIntegerList(){
+    private List<Integer> createAllowedInputIntegerList() {
         List<Integer> allowedInputNumbersList = new ArrayList<>();
         allowedInputNumbersList.add(5);
         allowedInputNumbersList.add(10);
         allowedInputNumbersList.add(15);
         return allowedInputNumbersList;
     }
-
 }

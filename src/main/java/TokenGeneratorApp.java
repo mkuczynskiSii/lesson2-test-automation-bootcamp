@@ -6,15 +6,13 @@ public class TokenGeneratorApp {
         TokenGenerator tokenGenerator = new TokenGenerator();
         InputValidator inputValidator = new InputValidator();
 
-        List<Integer> allowedInputNumbersList = getAllowedInputNumbersList();
-
         do {
             System.out.println("Enter the number of chars you want your token to be made of.");
             System.out.println("Available options are 5, 10 or 15");
             try {
                 int inputInt = new Scanner(System.in).nextInt();
 
-                if (inputValidator.isInputValid(inputInt, allowedInputNumbersList)) {
+                if (inputValidator.isInputValid(inputInt, getAllowedInputNumbersList())) {
                     System.out.println("Here is your token: " + tokenGenerator.generateToken(inputInt));
                 } else {
                     System.out.println("You have entered not allowed number");
@@ -39,7 +37,7 @@ public class TokenGeneratorApp {
         return allowedInputNumbersList;
     }
 
-    private static boolean doesUserWantToGenerateNextToken(){
+    private static boolean doesUserWantToGenerateNextToken() {
         try {
             String inputString = new Scanner(System.in).nextLine();
 
